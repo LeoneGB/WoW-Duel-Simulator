@@ -1,12 +1,12 @@
 ## 📌 Version
 
-Current version: 1.0.0
+Current version: 1.1.0
 
 # WoW Duel Simulator
 
 A fan-made turn-based battle simulator game built with Node.js, with classes, skills and all inspired by World of Warcraft Wrath of the Lich King.
 
-Each class has unique abilities, including damage, damage over-time (DoT), healing, heal over-time (HoT) and buffs.
+Each class has unique abilities, including damage, damage over-time (DoT), healing, heal over-time (HoT), buffs and debuffs.
 
 > ⚠️ **This project is under active development**  
 > New features and improvements are continuously being added. Classes may receives buffs and nerfs in the future, also new mechanics may be added.
@@ -18,23 +18,23 @@ Each class has unique abilities, including damage, damage over-time (DoT), heali
 - A total of 5 rounds.
 - If a player dies before 5 rounds, the battle automatically ends and the terminal shows who died and the winner.
 - If both players don't die until the last round, the winner is the player who has more HP.
-- 7 playable classes.
+- 10 playable classes.
 - 3 unique abilities per class.
-- Damage, healing, lifesteal and buff system.
+- Damage, healing, lifesteal, buff and debuff system.
 - Effects over time (DoT / HoT).
 
 ## 🧙‍♂️ Classes and Skills
 
-## 🛡️ Warrior (130 HP)
+## 🛡️ Warrior (120 HP)
 - 🪓 Mortal Strike → Damage (15–25)
-- 🩸 Rend → DoT (6/turn, 3 turns)
+- 🩸 Rend → DoT (6/turn, 2 turns)
 - 💀 Execute → Damage (25–40), If target is below 30% HP
 
 ---
 
 ## ✝️ Paladin (110 HP)
 - ⚜️ Judgement → Damage (12–20)
-- 🎇 Holy Light → Heal (16–20)
+- 🎇 Holy Light → Heal (12–16)
 - 🛡️ Divine Shield → Buff (50% damage reduction, 2 turns)
 
 ---
@@ -54,9 +54,9 @@ Each class has unique abilities, including damage, damage over-time (DoT), heali
 ---
 
 ## 🕯️ Warlock (95 HP)
-- 🟣 Shadow Bolt → Damage (16–24)
+- 🟣 Shadow Bolt → Damage (13–18)
 - 👾 Corruption → DoT (5/turn, 4 turns)
-- 💜 Drain Life → Lifesteal (8–14 dmg, 50% heal based on damage)
+- 💜 Drain Life → Lifesteal (8–14 damage, 50% heal based on damage)
 
 ---
 
@@ -71,6 +71,30 @@ Each class has unique abilities, including damage, damage over-time (DoT), heali
 - 🌙 Wrath → Damage (12–18)
 - ☄️ Moonfire → Damage + DoT (10–16 + 4/turn, 2 turns)
 - 💚 Rejuvenation → HoT (6/turn, 3 turns)
+
+---
+
+## 💀 Death Knight (110 HP)
+
+- 🪓 Death Strike → Damage + Lifesteal (7–13, 90% heal based on damage ) 
+- ❄️ Icy Touch → Damage + DoT (8-12 + 6/turn, 3 turns)
+- 🗡️ Scourge Strike → Damage (13–19)
+
+---
+
+## 🏹 Hunter (110 HP)
+
+- 🎯 Aimed Shot → Damage (10–13) 30% anti-heal for 2 turns
+- 🐍 Serpent Sting → DoT (5/turn, 3 turns)
+- 🏹 Chimera Shot → Damage (13–18) 60% chance to deal a bonus damage based on damage of your first Chimera Shot
+
+---
+
+## 🧿 Priest (110 HP)
+
+- 👹 Vampiric Touch → Damage + DoT (13–16, 4/turn, 3 turns)
+- 🟣 Shadow Word: Pain → DoT (5/turn, 4 turns)
+- ✨ Flash Heal → Heal (14–20)
 
 ---
 
