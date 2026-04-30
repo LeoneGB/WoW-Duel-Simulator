@@ -165,7 +165,7 @@ Vencedor: Leone 🏆
 Make sure you have installed:
 
 - Node.js: v18+
-- npm: 9+
+- npm: 9+'
 
 ---
 

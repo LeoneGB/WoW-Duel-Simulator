@@ -1,6 +1,6 @@
 import createPlayer from "../entities/player.js"
-import {warrior, paladin, rogue, mage, warlock, shaman, druid} from "../data/classes.js"
-import { skillMechanics, processDots, processHots, processBuffs } from "./skillrules.js";
+import {warrior, paladin, rogue, mage, warlock, shaman, druid, deathKnight, hunter, priest } from "../data/classes.js"
+import { skillMechanics, processDots, processHots, processBuffs, processDebuffs } from "./skillrules.js";
 
 async function startBattle(player1, player2) {
     console.log(`Duelo começando entre:`);
@@ -22,13 +22,24 @@ async function battleEngine(player1, player2) {
         await processBuffs(player1)
         await processBuffs(player2)
 
-        const skill1 = player1.skills[
-            Math.floor(Math.random() * player1.skills.length)
-        ];
+        await processDebuffs(player1)
+        await processDebuffs(player2)
+
+        const availableSkills1 = player1.skills.filter(skill => {
+            return !skill.condition || skill.condition(player1, player2)
+        }) 
+
+        const skill1 = availableSkills1[
+            Math.floor(Math.random() * availableSkills1.length)
+        ]
+
+        const availableSkills2 = player2.skills.filter(skill => {
+            return !skill.condition || skill.condition(player2, player1)
+        }) 
         
-        const skill2 = player2.skills[
-            Math.floor(Math.random() * player2.skills.length)
-        ];
+        const skill2 = availableSkills2[
+            Math.floor(Math.random() * availableSkills2.length)
+        ]
         
         await skillMechanics(player1, player2, skill1);
         

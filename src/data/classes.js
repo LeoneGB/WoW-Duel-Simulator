@@ -1,8 +1,8 @@
-import {warriorSkills, paladinSkills, rogueSkills, mageSkills, warlockSkills, shamanSkills, druidSkills} from "./skills.js"
+import {warriorSkills, paladinSkills, rogueSkills, mageSkills, warlockSkills, shamanSkills, druidSkills, deathKnightSkills, hunterSkills, priestSkills} from "./skills.js"
 
 const warrior = {
     name: "Warrior",
-    life: 130,
+    life: 120,
     skills: [
         warriorSkills.mortalStrike,
         warriorSkills.rend,
@@ -70,6 +70,36 @@ const druid = {
     ]
 }
 
+const deathKnight = {
+    name: "Death Knight",
+    life: 110,
+    skills: [
+        deathKnightSkills.deathStrike,
+        deathKnightSkills.icyTouch,
+        deathKnightSkills.scourgeStrike
+    ]
+}
+
+const hunter = {
+    name: "Hunter",
+    life: 90,
+    skills: [
+        hunterSkills.aimedShot,
+        hunterSkills.serpentSting,
+        hunterSkills.chimeraShot
+    ]
+}
+
+const priest = {
+    name: "Priest",
+    life: 75,
+    skills: [
+        priestSkills.vampiricTouch,
+        priestSkills.shadowWordPain,
+        priestSkills.flashHeal
+    ]
+}
+
 export {
     warrior,
     paladin,
@@ -77,5 +107,8 @@ export {
     mage,
     warlock,
     shaman,
-    druid
+    druid,
+    deathKnight,
+    hunter,
+    priest
 }

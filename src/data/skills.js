@@ -9,13 +9,14 @@ const warriorSkills = {
         name: "Rend",
         symbol: "🩸",
         type: "dot",
-        dot: {value: 6, duration: 3}
+        dot: {value: 6, duration: 2}
     },
     execute: {
         name: "Execute",
         symbol: "💀",
-        type: "execute",
+        type: "damage",
         value: [25, 40],
+        condition: (attacker, target) => target.actualLife <= target.maxLife * 0.3
     }
 }
 
@@ -30,7 +31,7 @@ const paladinSkills = {
         name: "Holy Light",
         symbol: "🎇",
         type: "heal",
-        value: [16, 20]
+        value: [12, 16]
     },
     divineShield: {
         name: "Divine Shield",
@@ -51,7 +52,7 @@ const rogueSkills = {
         name: "Eviscerate",
         symbol: "⚔️ ",
         type: "damage",
-        value: [11, 18] //30% chance of damage being doubled
+        value: [11, 18]
     },
     rupture: {
         name: "Rupture",
@@ -79,7 +80,7 @@ const mageSkills = {
         name: "Fire Blast",
         symbol: "💥",
         type: "damage",
-        value: [15, 25] // if fire blast is casted while the target is being burned by fireball, fire blast has 30% chance to double its damage
+        value: [15, 25]
     }
 }
 
@@ -88,7 +89,7 @@ const warlockSkills = {
         name: "Shadow Bolt",
         symbol: "🟣",
         type: "damage",
-        value: [16, 24]
+        value: [13, 18]
     },
     corruption: {
         name: "Corruption",
@@ -148,6 +149,74 @@ const druidSkills = {
     }
 }
 
+const deathKnightSkills = {
+    deathStrike: {
+        name: "Death Strike",
+        symbol: "🪓",
+        type: "lifesteal",
+        value: [7, 13],
+        ratio: 0.9
+    },
+    icyTouch: {
+        name: "Icy Touch",
+        symbol: "❄️ ",
+        type: ["damage", "dot"],
+        value: [8, 12],
+        dot: {value: 6, duration: 3}
+    },
+    scourgeStrike: {
+        name: "Scourge Strike",
+        symbol: "🗡️",
+        type: "damage",
+        value: [13, 19]
+    }
+}
+
+const hunterSkills = {
+    aimedShot: {
+        name: "Aimed Shot",
+        symbol: "🎯",
+        type: ["damage", "debuff"],
+        value: [10, 13],
+        debuff: {value: 0.3, duration: 2}
+    },
+    serpentSting: {
+        name: "Serpent Sting",
+        symbol: "🐍",
+        type: "dot",
+        dot: {value: 5, duration: 3}
+    },
+    chimeraShot: {
+        name: "Chimera Shot",
+        symbol: "🏹",
+        type: "damage",
+        value: [13, 18],
+        ratio: 0.6,
+    }
+}
+
+const priestSkills = {
+    vampiricTouch: {
+        name: "Vampiric Touch",
+        symbol: "👹",
+        type: ["damage", "dot"],
+        value: [13, 16],
+        dot: {value: 4, duration: 3}
+    },
+    shadowWordPain: {
+        name: "Shadow Word: Pain",
+        symbol: "🟣",
+        type: "dot",
+        dot: {value: 5, duration: 4}
+    },
+    flashHeal: {
+        name: "Flash Heal",
+        symbol: "✨",
+        type: "heal",
+        value: [14, 20]
+    }
+}
+
 export {
     warriorSkills,
     paladinSkills,
@@ -155,5 +224,8 @@ export {
     mageSkills,
     warlockSkills,
     shamanSkills,
-    druidSkills
+    druidSkills,
+    deathKnightSkills,
+    hunterSkills,
+    priestSkills
 }

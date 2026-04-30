@@ -7,7 +7,8 @@ async function createPlayer(name, playerClass) {
         skills: playerClass.skills,
         activeBuffs: [],
         activeDots: [],
-        activeHots: []
+        activeHots: [],
+        activeDebuffs: []
     };
 }
 
